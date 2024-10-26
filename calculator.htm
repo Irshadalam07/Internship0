@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            background-image: url(calc2.jpg);
+            background-repeat: no-repeat;
+            background-size:100% 820px;
+        }
+        h1{
+            font-size: 50px;
+            font-style: italic;
+            animation: head 2s infinite;
+            
+
+        }
+        @keyframes head{
+            0%{color:red}
+            25%{color:purple}
+            50%{color:blue}
+            75%{color:yellow}
+            100%{color:deeppink}
+        }
+        #one{
+            width: 100%;
+            height: 75px;
+            border-radius: 20px;
+            text-align: right;
+        }
+        input[type="button"]{
+            width: 100%;
+            height: 100%;
+            margin:8px;
+            padding:30px;
+            border-radius: 30px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 30px;
+            background-color: silver;
+            color: brown;
+            
+            
+        }
+        #main{
+            width:430px;
+            height: 590px;
+            background-color: black;
+            border:3px solid yellow;
+           position: absolute;
+           top:100px;
+           border-radius: 20px;
+
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div id="main">
+    <table>
+        <tr>
+            <th colspan="3"> <input type="text" name="number" id="one" placeholder="0">
+                <th><input type ="button" value="c" onclick="clr()">   
+        </tr>
+        <tr>
+            <th><input type ="button" value="7" onclick="get(7)">
+                <th><input type ="button" value="8" onclick="get(8)">
+                    <th><input type ="button" value="9" onclick="get(9)">
+                        <th><input type ="button" value="/" onclick="get('/')">
+                          
+            
+        </tr>
+        <tr>
+            <th><input type ="button" value="4" onclick="get(4)" >
+                <th><input type ="button" value="5" onclick="get(5)">
+                    <th><input type ="button" value="6" onclick="get(6)">
+                        <th><input type ="button" value="+" onclick="get('+')">
+        </tr>
+        <tr>
+            <th><input type ="button" value="1" onclick="get(1)">
+                <th><input type ="button" value="2" onclick="get(2)">
+                    <th><input type ="button" value="3" onclick="get(3)">
+                        <th><input type ="button" value="-" onclick="get('-')">
+
+        </tr>
+        <tr>
+            <th><input type ="button" value="0" onclick="get(0)">
+                <th><input type ="button" value="." onclick="get('.')">
+                    <th><input type ="button" value="=" onclick="solve()">
+                        <th><input type ="button" value="*" onclick="get('*')">
+        </tr>
+    </table>
+</div>
+    <script>
+        function get(vl){
+         document.getElementById("one").value +=vl;
+        }
+        function clr(){
+            document.getElementById("one").value =" ";
+
+        }
+        function solve(){
+            var x = document.getElementById("one").value;
+            var y = eval(x);
+            document.getElementById("one").value = y;
+        }
+    </script>
+
+    
+</body>
+</html>
